@@ -6,138 +6,120 @@
 <title>Safan Ahmed - Java Full Stack Trainer</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f6fc;
-    color: #333;
-  }
+  /* Reset & Body */
+  * {margin:0; padding:0; box-sizing:border-box;}
+  body {font-family: 'Roboto', sans-serif; background:#f2f6fc; color:#333; scroll-behavior: smooth;}
 
-  /* Header */
-  header {
-    background: linear-gradient(135deg, #0d47a1, #1976d2);
-    color: #fff;
-    text-align: center;
-    padding: 3rem 1rem 2rem 1rem;
+  /* Navbar */
+  nav {
+    background: linear-gradient(90deg,#0d47a1,#1976d2);
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding:1rem 2rem;
+    position: sticky;
+    top:0;
+    z-index:1000;
   }
-  header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.3rem;
+  nav .logo {color:#fff; font-size:1.5rem; font-weight:700;}
+  nav ul {list-style:none; display:flex; gap:1rem;}
+  nav ul li a {
+    color:#fff; text-decoration:none; font-weight:500; padding:0.5rem 1rem;
+    border-radius:5px; transition:0.3s;
   }
-  header h2 {
-    font-weight: 400;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
-  header p {
-    max-width: 700px;
-    margin: auto;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
+  nav ul li a:hover {background:rgba(255,255,255,0.2);}
 
-  /* Section styling */
-  section {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  /* Hero Section */
+  .hero {
+    text-align:center;
+    padding:6rem 2rem 4rem 2rem;
+    background: linear-gradient(135deg, #0d47a1, #42a5f5);
+    color:#fff;
   }
-  section h3 {
-    color: #0d47a1;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    border-bottom: 2px solid #0d47a1;
-    display: inline-block;
-    padding-bottom: 0.2rem;
-  }
+  .hero h1 {font-size:2.8rem; margin-bottom:0.5rem;}
+  .hero h2 {font-weight:400; font-size:1.4rem; margin-bottom:1rem;}
+  .hero p {max-width:700px; margin:auto; font-size:1.1rem; line-height:1.6;}
 
-  /* Skills & Badges */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .badges img {
-    transition: transform 0.2s;
-  }
-  .badges img:hover {
-    transform: scale(1.1);
-  }
+  /* Sections */
+  section {max-width:1000px; margin:3rem auto; padding:2rem; background:#fff; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+  section h3 {color:#0d47a1; margin-bottom:1rem; font-size:1.6rem; border-bottom:2px solid #0d47a1; display:inline-block; padding-bottom:0.2rem;}
+
+  /* Badges */
+  .badges {display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center;}
+  .badges img {transition: transform 0.3s;}
+  .badges img:hover {transform: scale(1.1);}
 
   /* Projects */
-  .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
-  }
+  .projects {display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:1rem;}
   .project {
-    background-color: #e3f2fd;
-    padding: 1rem;
-    border-radius: 8px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    background:#e3f2fd;
+    padding:1.2rem;
+    border-radius:10px;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
-  .project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  }
-  .project h4 {
-    margin-top: 0;
-    color: #0d47a1;
-  }
+  .project:hover {transform: translateY(-5px); box-shadow:0 6px 15px rgba(0,0,0,0.15);}
+  .project h4 {color:#0d47a1; margin-bottom:0.5rem;}
 
-  /* Links */
-  a {
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
+  /* Blog Section */
+  .blogs {display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:1rem;}
+  .blog {background:#fff3e0; padding:1rem; border-radius:8px; transition: transform 0.3s;}
+  .blog:hover {transform: translateY(-5px); box-shadow:0 6px 15px rgba(0,0,0,0.1);}
+  .blog h4 {color:#ef6c00; margin-bottom:0.5rem;}
+  .blog p {font-size:0.95rem; line-height:1.4;}
+
+  /* Connect */
+  .connect {text-align:center;}
+  .connect a {margin:0.3rem; display:inline-block;}
+  .connect img {transition: transform 0.3s;}
+  .connect img:hover {transform: scale(1.1);}
 
   /* Footer */
-  footer {
-    background: #0d47a1;
-    color: white;
-    text-align: center;
-    padding: 1.5rem 1rem;
-    margin-top: 2rem;
-  }
+  footer {background:#0d47a1; color:#fff; text-align:center; padding:2rem 1rem; margin-top:3rem;}
 
   /* Responsive */
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 2rem;
-    }
-    header h2 {
-      font-size: 1rem;
-    }
+  @media(max-width:600px){
+    .hero h1 {font-size:2rem;}
+    .hero h2 {font-size:1.1rem;}
+    nav ul {flex-direction:column; gap:0.3rem;}
   }
 </style>
 </head>
 <body>
 
-<header>
+<!-- Navbar -->
+<nav>
+  <div class="logo">Safan Ahmed</div>
+  <ul>
+    <li><a href="#profile">Profile</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
   <h1>Safan Ahmed</h1>
   <h2>Java Full-Stack Consultant | Developer | Trainer</h2>
   <p>Helping teams build scalable, maintainable, and modern applications using Java and full-stack technologies. 11+ years of experience mentoring professionals and delivering corporate training programs.</p>
-</header>
+</section>
 
-<section>
+<!-- Profile Section -->
+<section id="profile">
   <h3>Profile Summary</h3>
   <ul>
     <li>Expert in <strong>Java Full Stack, React, and Angular</strong>.</li>
-    <li>Delivered corporate programs for top clients including <strong>Capgemini, Telstra, Infosys, HCL, Fujitsu, Techment, DXC, NatWest Group, Unext, Swiggy, and Wipro</strong>.</li>
-    <li>Strong in OOP concepts, mentoring learners on <strong>Java 17, Spring Boot 3.x, Microservices, Kafka, and ELK Stack</strong>.</li>
-    <li>Hands-on teaching approach with real-time coding and deployment sessions.</li>
+    <li>Delivered programs for <strong>Capgemini, Telstra, Infosys, HCL, Fujitsu, Techment, DXC, NatWest, Unext, Swiggy, Wipro</strong>.</li>
+    <li>Strong in OOP concepts, mentoring learners on <strong>Java 17, Spring Boot 3.x, Microservices, Kafka, ELK Stack</strong>.</li>
+    <li>Hands-on approach with real-time coding and deployment sessions.</li>
     <li>Experienced in cloud platforms such as <strong>AWS and Azure</strong>.</li>
-    <li>Continuously upgrading skills in <strong>Data Science, AI, and Machine Learning</strong>.</li>
+    <li>Continuously upgrading skills in <strong>Data Science, AI, and ML</strong>.</li>
   </ul>
 </section>
 
-<section>
+<!-- Skills Section -->
+<section id="skills">
   <h3>Technical Skills</h3>
   <div class="badges">
     <!-- Frontend -->
@@ -148,77 +130,63 @@
     <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
     <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-
     <!-- Backend -->
     <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
     <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" />
     <img src="https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=hibernate&logoColor=white" />
     <img src="https://img.shields.io/badge/JPA-FF6F61?style=for-the-badge" />
-
-    <!-- Databases -->
-    <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
-    <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
-    <img src="https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white" />
-    <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
-
-    <!-- DevOps / Cloud -->
-    <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-    <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white" />
-    <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-    <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white" />
-    <img src="https://img.shields.io/badge/Azure-0089D6?style=for-the-badge&logo=microsoftazure&logoColor=white" />
-
-    <!-- Messaging / Analytics -->
-    <img src="https://img.shields.io/badge/Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white" />
-    <img src="https://img.shields.io/badge/ELK_Stack-FC6D26?style=for-the-badge" />
-
-    <!-- Testing -->
-    <img src="https://img.shields.io/badge/JUnit-25A162?style=for-the-badge" />
-    <img src="https://img.shields.io/badge/Mockito-1B2432?style=for-the-badge" />
-    <img src="https://img.shields.io/badge/Jasmine-8A4F9E?style=for-the-badge" />
-    <img src="https://img.shields.io/badge/Karma-FBA919?style=for-the-badge" />
   </div>
 </section>
 
-<section>
+<!-- Projects Section -->
+<section id="projects">
   <h3>Featured Projects</h3>
   <div class="projects">
     <div class="project">
       <h4>Doctor Appointment Booking System</h4>
-      <p>Microservice-based healthcare platform for booking and managing patient appointments with real-time notifications.</p>
-      <p><strong>Tech Stack:</strong> Spring Boot 3.x, REST APIs, Docker, AWS, Kafka</p>
+      <p>Healthcare platform for booking and managing appointments with real-time notifications.</p>
+      <p><strong>Tech:</strong> Spring Boot 3.x, REST APIs, Docker, AWS, Kafka</p>
     </div>
     <div class="project">
       <h4>E-Commerce Application</h4>
       <p>Full-stack platform supporting product catalog, cart management, secure checkout, and order tracking.</p>
-      <p><strong>Tech Stack:</strong> ReactJS, Spring Boot 3.x, MySQL, AWS, Microservices</p>
+      <p><strong>Tech:</strong> ReactJS, Spring Boot 3.x, MySQL, AWS, Microservices</p>
     </div>
     <div class="project">
-      <h4>Dealer Location Recommendation System</h4>
-      <p>System suggesting nearby dealers based on user location and preferences using real-time analytics.</p>
-      <p><strong>Tech Stack:</strong> Angular, Spring Boot 3.x, Kafka, ELK Stack, Microservices</p>
-    </div>
-    <div class="project">
-      <h4>EV Subscription Plan Management System</h4>
-      <p>End-to-end platform for managing electric vehicle subscription plans, including plan selection, payment, and scheduling.</p>
-      <p><strong>Tech Stack:</strong> ReactJS, Spring Boot 3.x, Kafka, ELK Stack, Microservices</p>
+      <h4>Dealer Location Recommendation</h4>
+      <p>Suggests nearby dealers based on location and preferences using real-time analytics.</p>
+      <p><strong>Tech:</strong> Angular, Spring Boot 3.x, Kafka, ELK Stack, Microservices</p>
     </div>
   </div>
 </section>
 
-<section>
-  <h3>Connect with Me</h3>
-  <p>
-    <a href="https://www.linkedin.com/in/safan-ahmed-515188251/" target="_blank">
-      <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-    </a>
-    <a href="https://www.youtube.com/@safanahmed9380" target="_blank">
-      <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
-    </a>
-  </p>
+<!-- Blog Section -->
+<section id="blog">
+  <h3>Blog</h3>
+  <div class="blogs">
+    <div class="blog">
+      <h4>Java 17 Features</h4>
+      <p>Exploring the new features introduced in Java 17 and how they improve code readability and performance.</p>
+    </div>
+    <div class="blog">
+      <h4>Spring Boot Microservices</h4>
+      <p>Best practices for designing and deploying scalable microservices using Spring Boot 3.x.</p>
+    </div>
+  </div>
 </section>
 
+<!-- Connect Section -->
+<section id="connect" class="connect">
+  <h3>Connect with Me</h3>
+  <a href="https://www.linkedin.com/in/safan-ahmed-515188251/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="https://www.youtube.com/@safanahmed9380" target="_blank">
+    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
+  </a>
+</section>
+
+<!-- Footer -->
 <footer>
   ★ Thanks for visiting my profile!
 </footer>
